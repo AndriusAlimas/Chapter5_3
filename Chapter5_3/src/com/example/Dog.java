@@ -6,13 +6,13 @@ public class Dog {
     private String size;
     
     //CONSTRUCTORS:
-    public Dog(String string) {
-        this.breed = string;
+    public Dog(String breed) {
+        this.breed = breed;
     }
 
-    public Dog(String string, String string2) {
-        this.breed = string;
-        this.size = string2;
+    public Dog(String breed, String size) {
+        this.breed = breed;
+        this.size = size;
     }
     // GETTERS:
     public String getBreed() {
