@@ -6,6 +6,10 @@
   version="4.0"
   metadata-complete="true">
 
+	<listener>
+		<listener-class>com.example.listner.MyServletContextListener</listener-class>
+	</listener>
+	
     <servlet>
         <servlet-name>Servlet</servlet-name>
         <servlet-class>com.example.servlet.MainServlet</servlet-class>
@@ -16,4 +20,14 @@
         <url-pattern>/servlet.do</url-pattern>
     </servlet-mapping>
 
+	<context-param>
+		<param-name>breed</param-name>
+		<param-value>Great Dane</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>size</param-name>
+		<param-value>Big</param-value>
+	</context-param>
+	
 </web-app>
