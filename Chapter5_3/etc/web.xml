@@ -11,12 +11,12 @@
 	</listener>
 	
     <servlet>
-        <servlet-name>Servlet</servlet-name>
+        <servlet-name>MyServlet</servlet-name>
         <servlet-class>com.example.servlet.MainServlet</servlet-class>
     </servlet>
 	
     <servlet-mapping>
-        <servlet-name>Servlet</servlet-name>
+        <servlet-name>MyServlet</servlet-name>
         <url-pattern>/servlet.do</url-pattern>
     </servlet-mapping>
 
