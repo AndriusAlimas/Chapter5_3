@@ -20,7 +20,7 @@ public class MainServlet extends HttpServlet {
         out.println("<hr><b>Dog's breed is: " + dog.getBreed() + "</b><br>");
         out.println("<hr><b>Now Testing getAttributeNames() all Enumeration list:</b><br>");
         
-        Enumeration enumeration = this.getServletContext().getAttributeNames();
+        Enumeration<String> enumeration = this.getServletContext().getAttributeNames();
         while (enumeration.hasMoreElements()) {
             out.println("<br><i>" + enumeration.nextElement() + "</i>");
         }
@@ -35,6 +35,28 @@ public class MainServlet extends HttpServlet {
         // parentheses, for example, JavaServer Web Dev Kit/1.0 (JDK 1.1.6; Windows NT 4.0 x86).
         out.println("<hr>Server Info: <i><b>" + this.getServletContext().getServerInfo() + "</i></b>");
         
+        out.println("</body></html>");
+	}
+	
+	public void doPost(HttpServletRequest request,
+			HttpServletResponse response)throws ServletException,IOException{
+		response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        
+        out.println("<html>");
+        out.println("<head><title>Test delete_attribute </title></head>");
+        // get parameter from form and store to simple String value:
+        String delete_att = request.getParameter("delete_attribute");
+        // you can add, remove or replace attribute same use:
+        getServletContext().removeAttribute(delete_att);
+        
+        // get context scope all attribute names:
+        Enumeration<String> enumeration = this.getServletContext().getAttributeNames();
+        while (enumeration.hasMoreElements()) {
+            out.println("<br><i>" + enumeration.nextElement() + "</i>");
+        }
+        
+        out.println("<body><hr>We want to delete this attribute :<b>" + delete_att + "</b><br>");
         out.println("</body></html>");
 	}
 }
